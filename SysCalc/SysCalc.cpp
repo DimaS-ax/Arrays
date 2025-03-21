@@ -1,4 +1,4 @@
-#include<iostream>
+п»ї#include<iostream>
 using namespace std;
 
 //#define BINARY
@@ -11,8 +11,8 @@ void main()
 	int number;
 	char symbol[20];
 	int size = 0;
-	//number = 1991;// для примера без ввода
-	cout << "Введите число: "; cin >> number;
+	//number = 1991;// РґР»СЏ РїСЂРёРјРµСЂР° Р±РµР· РІРІРѕРґР°
+	cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: "; cin >> number;
 
 
 #ifdef BINARY
