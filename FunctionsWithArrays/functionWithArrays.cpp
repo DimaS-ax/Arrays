@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 
 void FunArray(int arr[], const int SIZE);
@@ -43,27 +43,27 @@ void main()
 void FunArray(int arr[], const int SIZE)
 {
 
-	cout << "Ôóíêöèÿ Ìàññèâ:\n";
+	cout << "Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ ÐœÐ°ÑÑÐ¸Ð²:\n";
 
-	cout << "Ââåäèòå ýëåìåíòû ìàññèâà: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << endl;
 	for (int i = 0; i < SIZE; i++)
 	{
 		cin >> arr[i];
 	}
 
-	cout << "Âûâîä ýëåìåíòîâ ìàññèâà: " << endl;
+	cout << "Ð’Ñ‹Ð²Ð¾Ð´ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << endl;
 	for (int i = 0; i < SIZE; i++)
 	{
 		cout << arr[i] << " ";
 	}
 
-	cout << "\nÂûâîä ýëåìåíòîâ ìàññèâà â îáðàòíîì ïîðÿäêå: " << endl;
+	cout << "\nÐ’Ñ‹Ð²Ð¾Ð´ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð² Ð¾Ð±Ñ€Ð°Ñ‚Ð½Ð¾Ð¼ Ð¿Ð¾Ñ€ÑÐ´ÐºÐµ: " << endl;
 	for (int i = SIZE - 1; i >= 0; i--)
 	{
 		cout << arr[i] << " ";
 	}
 
-	cout << "\nÂûâîä ñóììû ýëåìåíòîâ ìàññèâà: " << endl;
+	cout << "\nÐ’Ñ‹Ð²Ð¾Ð´ ÑÑƒÐ¼Ð¼Ñ‹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << endl;
 	int Sum = 0;
 	for (int i = 0; i < SIZE; i++)
 	{
@@ -71,7 +71,7 @@ void FunArray(int arr[], const int SIZE)
 	}
 	cout << Sum;
 
-	cout << "\nÂûâîä ñðåäíåãî-àðôìåòè÷åñêîãî ìàññèâà: " << endl;
+	cout << "\nÐ’Ñ‹Ð²Ð¾Ð´ ÑÑ€ÐµÐ´Ð½ÐµÐ³Ð¾-Ð°Ñ€Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << endl;
 	double ArithmeticMean;
 	ArithmeticMean = (double)Sum / SIZE;
 	cout << ArithmeticMean << endl;
@@ -90,15 +90,15 @@ void FunArray(int arr[], const int SIZE)
 			MinElement = arr[i];
 		}
 	}
-	cout << "Ìàêñèìàëüíûé ýëåìåíò: " << MaxElement << endl;
-	cout << "Ìèíèìàëüíûé ýëåìåíò: " << MinElement << endl;
+	cout << "ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚: " << MaxElement << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚: " << MinElement << endl;
 	cout << "________________________________" << endl;
 
 }
 
 void Shift(int arr[], int brr[], const int SIZE)
 {
-	cout << "Ñäâèã ìàññèâà: \n";
+	cout << "Ð¡Ð´Ð²Ð¸Ð³ Ð¼Ð°ÑÑÐ¸Ð²Ð°: \n";
 
 	for (int i = 0; i < SIZE; i++)
 	{
@@ -113,7 +113,7 @@ void Shift(int arr[], int brr[], const int SIZE)
 	{
 		brr[i] = arr[i];
 	}
-	cout << "Ââåäèòå êîëè÷åñòâî ñäâèãîâ â ëåâî : "; cin >> SHIFT;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ´Ð²Ð¸Ð³Ð¾Ð² Ð² Ð»ÐµÐ²Ð¾ : "; cin >> SHIFT;
 	for (int i = 0; i < SIZE; i++)
 	{
 		arr[i] = brr[(i + SHIFT) % SIZE];
@@ -123,7 +123,7 @@ void Shift(int arr[], int brr[], const int SIZE)
 		cout << arr[i] << " ";
 	}
 
-	cout << "\nÂâåäèòå êîëè÷åñòâî ñäâèãîâ â ïðàâî : "; cin >> SHIFT;
+	cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ´Ð²Ð¸Ð³Ð¾Ð² Ð² Ð¿Ñ€Ð°Ð²Ð¾ : "; cin >> SHIFT;
 
 	for (int i = 0; i < SIZE; i++)
 	{
@@ -139,7 +139,7 @@ void Shift(int arr[], int brr[], const int SIZE)
 int SumArrayElements(int arr[], const int SIZE)
 {
 	int sum = 0;
-	cout << "Ââåäèòå ýëåìåíòû ìàññèâà ÷òî áû âû÷èñëèòü ñóììó: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ñ‡Ñ‚Ð¾ Ð±Ñ‹ Ð²Ñ‹Ñ‡Ð¸ÑÐ»Ð¸Ñ‚ÑŒ ÑÑƒÐ¼Ð¼Ñƒ: " << endl;
 	for (int i = 0; i < SIZE; i++)
 	{
 		cin >> arr[i];
@@ -149,7 +149,7 @@ int SumArrayElements(int arr[], const int SIZE)
 	{
 		sum += arr[i];
 	}
-	cout << "Ñóììà ýëåìåíòîâ ìàññèâà: ";
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°: ";
 	return sum;
 }
 
@@ -158,7 +158,7 @@ double ArithmeticMeanElements(int arr[], const int SIZE)
 	cout << "____________________________\n";
 	int Sum = 0;
 
-	cout << "Ââåäèòå ýëåìåíòû ìàññèâà ÷òî áû âû÷èñëèòü ñðåäíåå àðèôìåòè÷åñêîå: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ñ‡Ñ‚Ð¾ Ð±Ñ‹ Ð²Ñ‹Ñ‡Ð¸ÑÐ»Ð¸Ñ‚ÑŒ ÑÑ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ: " << endl;
 	for (int i = 0; i < SIZE; i++)
 	{
 		cin >> arr[i];
@@ -169,13 +169,13 @@ double ArithmeticMeanElements(int arr[], const int SIZE)
 		Sum += arr[i];
 	}
 
-	cout << "Ñðåäíåå àðèôìåòè÷åñêîå ìàññèâà: ";
+	cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ð¼Ð°ÑÑÐ¸Ð²Ð°: ";
 	return (double)Sum / SIZE;
 }
 
 int MinElement(int arr[], const int SIZE)
 {
-	cout << "Ââåäèòå ýåëåìåíòû ìàññèâà: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << endl;
 	int minElement;
 	for (int i = 0; i < SIZE; i++)
 	{
@@ -190,14 +190,14 @@ int MinElement(int arr[], const int SIZE)
 			minElement = arr[i];
 		}
 	}
-	cout << "Ìèíèìàëüíûé ýëåìåíò ìàññèâà: ";
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¼Ð°ÑÑÐ¸Ð²Ð°: ";
 	return minElement;
 
 }
 
 int MaxElement(int arr[], const int SIZE)
 {
-	cout << "\nÂâåäèòå ýåëåìåíòû ìàññèâà: " << endl;
+	cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << endl;
 	int maxElement;
 	for (int i = 0; i < SIZE; i++)
 	{
@@ -212,6 +212,6 @@ int MaxElement(int arr[], const int SIZE)
 			maxElement = arr[i];
 		}
 	}
-	cout << "Ìàêñèìàëüíûé ýëåìåíò ìàññèâà: ";
+	cout << "ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¼Ð°ÑÑÐ¸Ð²Ð°: ";
 	return maxElement;
 }
