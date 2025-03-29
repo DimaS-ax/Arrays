@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 
 void FillRand(int arr[], const int n);
@@ -27,24 +27,18 @@ void main()
 	Print(arr, n);
 
 
-	cout << "Ñóììà ýëåìåíòîâ ìàññèâà: " << Sum(arr, n) << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << Sum(arr, n) << endl;
 
-	cout << "Ñðåäíåå àðèôìåòè÷åñêîå " << AVG(arr, n) << endl;
+	cout << "Ð¡Ñ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ " << AVG(arr, n) << endl;
 
-	cout << "Ìèíèìàëüíûé ýåëåìåíò ìàññèâà " << MinValue(arr, n) << endl;
+	cout << "ÐœÐ¸Ð½Ð¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¼Ð°ÑÑÐ¸Ð²Ð° " << MinValue(arr, n) << endl;
 
-	cout << "Ìàêñèìàëüíûé ýåëåìåíò ìàññèâà " << MaxValue(arr, n) << endl;
+	cout << "ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¼Ð°ÑÑÐ¸Ð²Ð° " << MaxValue(arr, n) << endl;
 
 	int Shifts;
-	cout << "Ââåäèòå êîëè÷åñòâî ñäâèãîâ: "; cin >> Shifts;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ´Ð²Ð¸Ð³Ð¾Ð²: "; cin >> Shifts;
 	ShiftLeft(arr, n, Shifts);
 	Print(arr, n);
-
-	
-
-
-
-
 
 
 	/*const int SIZE = 8;
