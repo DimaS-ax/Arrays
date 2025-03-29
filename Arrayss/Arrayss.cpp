@@ -1,14 +1,29 @@
 ﻿#include<iostream>
 using namespace std;
 
+void FillRand(double arr[], const int n);
 void FillRand(int arr[], const int n);
+
+
+void Print(double arr[], const int n);
 void Print(int arr[], const int n);
+
+void Sort(double arr[], const int n);
 void Sort(int arr[], const int n);
 
 int Sum(int arr[], const int n);
+double Sum(double arr[], const int n);
+
+double AVG(double arr[], const int n);
 double AVG(int arr[], const int n);
+
 int MinValue(int arr[], const int n);
+double MinValue(double arr[], const int n);
+
 int MaxValue(int arr[], const int n);
+double MaxValue(double arr[], const int n);
+
+void ShiftLeft(double arr[], const int n, const int Shifts);
 void ShiftLeft(int arr[], const int n, const int Shifts);
 
 
@@ -18,7 +33,7 @@ void main()
 	setlocale(LC_ALL, "ru");
 
 	const int n = 5;
-	int arr[n];
+	double arr[n];
 	
 
 	FillRand(arr, n);
@@ -36,9 +51,14 @@ void main()
 	cout << "Максимальный эелемент массива " << MaxValue(arr, n) << endl;
 
 	int Shifts;
-	cout << "Введите количество сдвигов: "; cin >> Shifts;
+	/*cout << "Введите количество сдвигов: "; cin >> Shifts;
 	ShiftLeft(arr, n, Shifts);
-	Print(arr, n);
+	Print(arr, n);*/
+
+	
+
+
+
 
 
 	/*const int SIZE = 8;
@@ -83,6 +103,16 @@ void FillRand(int arr[], const int n)
 		arr[i] = rand() % 100;
 	}
 }
+void FillRand(double arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		arr[i] = rand() % 10000;
+		arr[i] /= 100;
+	}
+}
+
+
 
 void Print(int arr[], const int n)
 {
@@ -92,6 +122,16 @@ void Print(int arr[], const int n)
 	}
 	cout << endl;
 }
+void Print(double arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+
+
 
 void Sort(int arr[], const int n)
 {
@@ -108,6 +148,23 @@ void Sort(int arr[], const int n)
 		}
 	}
 }
+void Sort(double arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i + 1; j < n; j++)
+		{
+			if (arr[j] < arr[i])
+			{
+				double buffer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = buffer;
+			}
+		}
+	}
+}
+
+
 
 int Sum(int arr[], const int n)
 {
@@ -119,6 +176,18 @@ int Sum(int arr[], const int n)
 	}
 	return sum;
 }
+double Sum(double arr[], const int n)
+{
+	double sum = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+	}
+	return sum;
+}
+
+
 
 double AVG(int arr[], const int n)
 {
@@ -126,10 +195,28 @@ double AVG(int arr[], const int n)
 	return (double)Sum(arr, n) / n;
 
 }
+double AVG(double arr[], const int n)
+{
+
+	return (double)Sum(arr, n) / n;
+
+}
+
+
 
 int MinValue(int arr[], const int n)
 {
 	int min = arr[0];
+
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] < min)min = arr[i];
+	}
+	return min;
+}
+double MinValue(double arr[], const int n)
+{
+	double min = arr[0];
 
 	for (int i = 0; i < n; i++)
 	{
@@ -149,6 +236,16 @@ int MaxValue(int arr[], const int n)
 	}
 	return max;
 }
+double MaxValue(double arr[], const int n)
+{
+	double max = arr[0];
+
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] > max)max = arr[i];
+	}
+	return max;
+}
 
 
 void ShiftLeft(int arr[], const int n, const int Shifts)
@@ -156,6 +253,18 @@ void ShiftLeft(int arr[], const int n, const int Shifts)
 	for (int i = 0; i < Shifts; i++)
 	{
 		int buffer = arr[0];
+		for (int i = 0; i < n; i++)
+		{
+			arr[i - 1] = arr[i];
+		}
+		arr[n - 1] = buffer;
+	}
+}
+void ShiftLeft(double arr[], const int n, const int Shifts)
+{
+	for (int i = 0; i < Shifts; i++)
+	{
+		double buffer = arr[0];
 		for (int i = 0; i < n; i++)
 		{
 			arr[i - 1] = arr[i];
