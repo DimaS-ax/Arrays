@@ -1,12 +1,19 @@
 ﻿#include<iostream>
 using namespace std;
 
+#define delimiter "\n--------------------------------------\n"
+const int ROWS = 4;
+const int COLS = 5;
+
+
 void FillRand(double arr[], const int n);
 void FillRand(int arr[], const int n);
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS);
 
 
 void Print(double arr[], const int n);
 void Print(int arr[], const int n);
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
 
 void Sort(double arr[], const int n);
 void Sort(int arr[], const int n);
@@ -55,9 +62,22 @@ void main()
 	ShiftLeft(arr, n, Shifts);
 	Print(arr, n);*/
 
+
+
+	cout<< delimiter <<endl;
+	//Объявление двумерного массива
 	
+	int i_arr_2[ROWS][COLS] =
+	{
+		{3,5,8},
+		{13,21,34},
+		{55,89,144},
+	
+	};
 
-
+	FillRand(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS);
+	//cout << "Сумма элементов массива: " << Sum(i_arr_2, ROWS, COLS) << endl;
 
 
 
@@ -111,6 +131,16 @@ void FillRand(double arr[], const int n)
 		arr[i] /= 100;
 	}
 }
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand();
+		}
+	}
+}
 
 
 
@@ -130,7 +160,18 @@ void Print(double arr[], const int n)
 	}
 	cout << endl;
 }
-
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+	cout << endl;
+}
 
 
 void Sort(int arr[], const int n)
