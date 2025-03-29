@@ -5,6 +5,7 @@ int Sum(int a = 0, int b = 0, int c = 0);
 int Diff(int a, int b);
 int Prod(int a, int b);
 double Quotiant(int a, int b);
+int Sum(int arr[], const int n);
 
 void main()
 {
@@ -21,6 +22,13 @@ void main()
 	cout << a << "/" << b << "=" << Quotiant(a, b) << endl;
 	cout << 4 << "+" << 5 << "=" << Sum(4,5) << endl;
 	cout << Sum() << endl;
+
+	const int n = 8;
+	int arr[n]{2,3,4,5,6,7,1,2};
+
+	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
+
+
 }
 
 int Sum(int a, int b, int c)
@@ -39,4 +47,14 @@ int Prod(int a, int b)
 double Quotiant(int a, int b)
 {
 	return (double)a / b;
+}
+
+int Sum(int arr[], const int n)
+{
+	int sum = 0;
+	for (int i = 0; i < 0; i++)
+	{
+		sum += arr[i];
+	}
+	return sum;
 }
