@@ -11,8 +11,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SysCalc", "SysCalc\SysCalc.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Functions", "Functions\Functions.vcxproj", "{300BC583-1EA7-4C41-85BC-9514E9BBF606}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Arrayss", "Arrayss\Arrayss.vcxproj", "{9D93D2F0-6C22-4100-BF20-63FE8C46A055}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FunctionsWithArrays", "FunctionsWithArrays\FunctionsWithArrays.vcxproj", "{57196A20-C878-453D-B22C-88250C984398}"
 EndProject
 Global
@@ -55,14 +53,6 @@ Global
 		{300BC583-1EA7-4C41-85BC-9514E9BBF606}.Release|x64.Build.0 = Release|x64
 		{300BC583-1EA7-4C41-85BC-9514E9BBF606}.Release|x86.ActiveCfg = Release|Win32
 		{300BC583-1EA7-4C41-85BC-9514E9BBF606}.Release|x86.Build.0 = Release|Win32
-		{9D93D2F0-6C22-4100-BF20-63FE8C46A055}.Debug|x64.ActiveCfg = Debug|x64
-		{9D93D2F0-6C22-4100-BF20-63FE8C46A055}.Debug|x64.Build.0 = Debug|x64
-		{9D93D2F0-6C22-4100-BF20-63FE8C46A055}.Debug|x86.ActiveCfg = Debug|Win32
-		{9D93D2F0-6C22-4100-BF20-63FE8C46A055}.Debug|x86.Build.0 = Debug|Win32
-		{9D93D2F0-6C22-4100-BF20-63FE8C46A055}.Release|x64.ActiveCfg = Release|x64
-		{9D93D2F0-6C22-4100-BF20-63FE8C46A055}.Release|x64.Build.0 = Release|x64
-		{9D93D2F0-6C22-4100-BF20-63FE8C46A055}.Release|x86.ActiveCfg = Release|Win32
-		{9D93D2F0-6C22-4100-BF20-63FE8C46A055}.Release|x86.Build.0 = Release|Win32
 		{57196A20-C878-453D-B22C-88250C984398}.Debug|x64.ActiveCfg = Debug|x64
 		{57196A20-C878-453D-B22C-88250C984398}.Debug|x64.Build.0 = Debug|x64
 		{57196A20-C878-453D-B22C-88250C984398}.Debug|x86.ActiveCfg = Debug|Win32

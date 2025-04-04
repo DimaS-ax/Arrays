@@ -1,217 +1,564 @@
 ﻿#include<iostream>
 using namespace std;
 
-void FunArray(int arr[], const int SIZE);
+#define delimiter "\n--------------------------------------\n"
+const int ROWS = 4;
+const int COLS = 5;
 
-void Shift(int arr[], int brr[], const int SIZE);
+void FillRand(double arr[], const int n);
+void FillRand(int arr[], const int n);
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS);
+void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
-int SumArrayElements(int arr[], const int SIZE);
+void Print(double arr[], const int n);
+void Print(int arr[], const int n);
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
+void Print(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
-double ArithmeticMeanElements(int arr[], const int SIZE);
+void Sort(double arr[], const int n);
+void Sort(int arr[], const int n);
+void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);
+void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
-int MaxElement(int arr[], const int SIZE);
+int Sum(int arr[], const int n);
+double Sum(double arr[], const int n);
+int Sum(int arr[ROWS][COLS], const int ROWS, const int COLS);
+double Sum(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
-int MinElement(int arr[], const int SIZE);
+double AVG(double arr[], const int n);
+double AVG(int arr[], const int n);
+double AVG(int arr[ROWS][COLS], const int ROWS, const int COLS);
+double AVG(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
+int MinValue(int arr[], const int n);
+double MinValue(double arr[], const int n);
+int MinValue(int arr[ROWS][COLS], const int ROWS, const int COLS);
+double MinValue(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
+int MaxValue(int arr[], const int n);
+double MaxValue(double arr[], const int n);
+int MaxValue(int arr[ROWS][COLS], const int ROWS, const int COLS);
+double MaxValue(double arr[ROWS][COLS], const int ROWS, const int COLS);
+
+void ShiftLeft(double arr[], const int n, const int Shifts);
+void ShiftLeft(int arr[], const int n, int Shifts);
+void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts);
+void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts);
+
+void Shiftright(int arr[], const int n, const int Shifts);
+void Shiftright(double arr[], const int n, const int Shifts);
+void Shiftright(int arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts);
+void Shiftright(double arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts);
 
 void main()
 {
 	setlocale(LC_ALL, "ru");
 
-	const int SIZE = 5;
-	int arr[SIZE];
-	int brr[SIZE];
+	const int n = 5;
+	int arr[n];
 
-	FunArray(arr, SIZE);
+	FillRand(arr, n);
+	Print(arr, n);
+	Sort(arr, n);
+	Print(arr, n);
+	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
+	cout << "Среднее арифметическое " << AVG(arr, n) << endl;
+	cout << "Минимальный эелемент массива " << MinValue(arr, n) << endl;
+	cout << "Максимальный эелемент массива " << MaxValue(arr, n) << endl;
+	cout << delimiter << endl;
+	int Shifts;
+	Print(arr, n);
+	cout << "Введите количество сдвигов в лево : "; cin >> Shifts;
+	ShiftLeft(arr, n, Shifts);
+	Print(arr, n);
+	cout << "Введите количество сдвигов в право : "; cin >> Shifts;
+	Shiftright(arr, n, Shifts);
+	Print(arr, n);
 
-	Shift(arr, brr, SIZE);
+	//Объявление двумерного массива
+	cout << delimiter << endl;
+	double i_arr_2[ROWS][COLS];
 
-	cout << SumArrayElements(arr, SIZE) << endl;
+	FillRand(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS);
+	Sort(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS);
+	cout << "Сумма элементов двумерного массива: " << Sum(i_arr_2, ROWS, COLS) << endl;
+	cout << "Среднее арифметическое двумерного массива: " << AVG(i_arr_2, ROWS, COLS) << endl;
+	cout << "Минимальное значение двумерного массива: " << MinValue(i_arr_2, ROWS, COLS) << endl;
+	cout << "Максимальное значение двумерного массива: " << MaxValue(i_arr_2, ROWS, COLS) << endl;
 
-	cout << ArithmeticMeanElements(arr, SIZE) << endl;
+	Print(i_arr_2, ROWS, COLS);
+	cout << "Введите количество сдвигов в лево : "; cin >> Shifts;
+	ShiftLeft(i_arr_2, ROWS, COLS, Shifts);
+	Print(i_arr_2, ROWS, COLS);
+	cout << "Введите количество сдвигов в право : "; cin >> Shifts;
+	Shiftright(i_arr_2, ROWS, COLS, Shifts);
+	Print(i_arr_2, ROWS, COLS);
 
-	cout << MinElement(arr, SIZE);
-	
-	cout << MaxElement(arr, SIZE);
 
-	
+	cout << delimiter << endl;
+	const int SIZE = 8;
+	double brr[SIZE];
 
+	FillRand(brr, SIZE);
+	Print(brr, SIZE);
+	Sort(brr, SIZE);
+	Print(brr, SIZE);
+	cout << "Сумма элементов массива: " << Sum(brr, SIZE) << endl;
+	cout << "Среднее арифметическое " << AVG(brr, SIZE) << endl;
+	cout << "Минимальный эелемент массива " << MinValue(brr, SIZE) << endl;
+	cout << "Максимальный эелемент массива " << MaxValue(brr, SIZE) << endl;
+
+	Print(brr, SIZE);
+	cout << "Введите количество сдвигов в лево : "; cin >> Shifts;
+	ShiftLeft(brr, SIZE, Shifts);
+	Print(brr, SIZE);
+	cout << "Введите количество сдвигов в право : "; cin >> Shifts;
+	Shiftright(brr, SIZE, Shifts);
+	Print(brr, SIZE);
+}
+//_____________________________________________________
+void FillRand(int arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		arr[i] = rand() % 100;
+	}
+}
+void FillRand(double arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		arr[i] = rand() % 10000;
+		arr[i] /= 100;
+	}
+}
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % 100;
+		}
+	}
+}
+void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % 10000;
+			arr[i][j] /= 100;
+		}
+	}
 }
 
 
-void FunArray(int arr[], const int SIZE)
+
+void Print(int arr[], const int n)
 {
-
-	cout << "Функция Массив:\n";
-
-	cout << "Введите элементы массива: " << endl;
-	for (int i = 0; i < SIZE; i++)
+	for (int i = 0; i < n; i++)
 	{
-		cin >> arr[i];
+		cout << arr[i] << "\t";
 	}
-
-	cout << "Вывод элементов массива: " << endl;
-	for (int i = 0; i < SIZE; i++)
-	{
-		cout << arr[i] << " ";
-	}
-
-	cout << "\nВывод элементов массива в обратном порядке: " << endl;
-	for (int i = SIZE - 1; i >= 0; i--)
-	{
-		cout << arr[i] << " ";
-	}
-
-	cout << "\nВывод суммы элементов массива: " << endl;
-	int Sum = 0;
-	for (int i = 0; i < SIZE; i++)
-	{
-		Sum += arr[i];
-	}
-	cout << Sum;
-
-	cout << "\nВывод среднего-арфметического массива: " << endl;
-	double ArithmeticMean;
-	ArithmeticMean = (double)Sum / SIZE;
-	cout << ArithmeticMean << endl;
-
-
-	int MinElement = arr[0];
-	int MaxElement = arr[0];
-	for (int i = 0; i < SIZE; i++)
-	{
-		if (arr[i] > MaxElement)
-		{
-			MaxElement = arr[i];
-		}
-		else if (arr[i] < MinElement)
-		{
-			MinElement = arr[i];
-		}
-	}
-	cout << "Максимальный элемент: " << MaxElement << endl;
-	cout << "Минимальный элемент: " << MinElement << endl;
-	cout << "________________________________" << endl;
-
-}
-
-void Shift(int arr[], int brr[], const int SIZE)
-{
-	cout << "Сдвиг массива: \n";
-
-	for (int i = 0; i < SIZE; i++)
-	{
-		arr[i] = i;
-		cout << arr[i] << " ";
-	}
-
 	cout << endl;
-	int SHIFT;
-
-	for (int i = 0; i < SIZE; i++)
+}
+void Print(double arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
 	{
-		brr[i] = arr[i];
+		cout << arr[i] << "\t";
 	}
-	cout << "Введите количество сдвигов в лево : "; cin >> SHIFT;
-	for (int i = 0; i < SIZE; i++)
+	cout << endl;
+}
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
 	{
-		arr[i] = brr[(i + SHIFT) % SIZE];
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
 	}
-	for (int i = 0; i < SIZE; i++)
+	cout << endl;
+}
+void Print(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
 	{
-		cout << arr[i] << " ";
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
 	}
-
-	cout << "\nВведите количество сдвигов в право : "; cin >> SHIFT;
-
-	for (int i = 0; i < SIZE; i++)
-	{
-		arr[i] = brr[(10 + i - SHIFT) % SIZE];
-	}
-	for (int i = 0; i < SIZE; i++)
-	{
-		cout << arr[i] << " ";
-	}
-	cout << "\n________________________________" << endl;
+	cout << endl;
 }
 
-int SumArrayElements(int arr[], const int SIZE)
+
+void Sort(int arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i + 1; j < n; j++)
+		{
+			if (arr[j] < arr[i])
+			{
+				int buffer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = buffer;
+			}
+		}
+	}
+}
+void Sort(double arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i + 1; j < n; j++)
+		{
+			if (arr[j] < arr[i])
+			{
+				double buffer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = buffer;
+			}
+		}
+	}
+}
+void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			for (int k = i; k < ROWS; k++)
+			{
+				for (int l = j; l < COLS; l++)
+				{
+					if (arr[i][j] < arr[k][l])
+					{
+						int buffer = arr[i][j];
+						arr[i][j] = arr[k][l];
+						arr[k][l] = buffer;
+					}
+				}
+			}
+		}
+	}
+}
+void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			for (int k = i; k < ROWS; k++)
+			{
+				for (int l = j; l < COLS; l++)
+				{
+					if (arr[i][j] < arr[k][l])
+					{
+						double buffer = arr[i][j];
+						arr[i][j] = arr[k][l];
+						arr[k][l] = buffer;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+int Sum(int arr[], const int n)
 {
 	int sum = 0;
-	cout << "Введите элементы массива что бы вычислить сумму: " << endl;
-	for (int i = 0; i < SIZE; i++)
-	{
-		cin >> arr[i];
-	}
 
-	for (int i = 0; i < SIZE; i++)
+	for (int i = 0; i < n; i++)
 	{
 		sum += arr[i];
 	}
-	cout << "Сумма элементов массива: ";
+	return sum;
+}
+double Sum(double arr[], const int n)
+{
+	double sum = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+	}
+	return sum;
+}
+int Sum(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	int sum = 0;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			sum += arr[i][j];
+		}
+	}
+	return sum;
+}
+double Sum(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	double sum = 0;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			sum += arr[i][j];
+		}
+	}
 	return sum;
 }
 
-double ArithmeticMeanElements(int arr[], const int SIZE)
+
+double AVG(int arr[], const int n)
 {
-	cout << "____________________________\n";
-	int Sum = 0;
 
-	cout << "Введите элементы массива что бы вычислить среднее арифметическое: " << endl;
-	for (int i = 0; i < SIZE; i++)
-	{
-		cin >> arr[i];
-	}
-
-	for (int i = 0; i < SIZE; i++)
-	{
-		Sum += arr[i];
-	}
-
-	cout << "Среднее арифметическое массива: ";
-	return (double)Sum / SIZE;
-}
-
-int MinElement(int arr[], const int SIZE)
-{
-	cout << "Введите эелементы массива: " << endl;
-	int minElement;
-	for (int i = 0; i < SIZE; i++)
-	{
-		cin >> arr[i];
-	}
-
-	minElement = arr[0];
-	for (int i = 0; i < SIZE; i++)
-	{
-		if (arr[i] < minElement)
-		{
-			minElement = arr[i];
-		}
-	}
-	cout << "Минимальный элемент массива: ";
-	return minElement;
+	return (double)Sum(arr, n) / n;
 
 }
-
-int MaxElement(int arr[], const int SIZE)
+double AVG(double arr[], const int n)
 {
-	cout << "\nВведите эелементы массива: " << endl;
-	int maxElement;
-	for (int i = 0; i < SIZE; i++)
-	{
-		cin >> arr[i];
-	}
 
-	maxElement = arr[0];
-	for (int i = 0; i < SIZE; i++)
+	return (double)Sum(arr, n) / n;
+
+}
+double AVG(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	return (double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
+}
+double AVG(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	return (double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
+}
+
+
+int MinValue(int arr[], const int n)
+{
+	int min = arr[0];
+
+	for (int i = 0; i < n; i++)
 	{
-		if (arr[i] > maxElement)
+		if (arr[i] < min)min = arr[i];
+	}
+	return min;
+}
+double MinValue(double arr[], const int n)
+{
+	double min = arr[0];
+
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] < min)min = arr[i];
+	}
+	return min;
+}
+int MinValue(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	int minValue = arr[0][0];
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
 		{
-			maxElement = arr[i];
+			if (arr[i][j] < minValue)minValue = arr[i][j];
 		}
 	}
-	cout << "Максимальный элемент массива: ";
-	return maxElement;
+	return minValue;
+}
+double MinValue(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	double minValue = arr[0][0];
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			if (arr[i][j] < minValue)minValue = arr[i][j];
+		}
+	}
+	return minValue;
+}
+
+
+int MaxValue(int arr[], const int n)
+{
+	int max = arr[0];
+
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] > max)max = arr[i];
+	}
+	return max;
+}
+double MaxValue(double arr[], const int n)
+{
+	double max = arr[0];
+
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] > max)max = arr[i];
+	}
+	return max;
+}
+int MaxValue(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	int maxValue = arr[0][0];
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			if (arr[i][j] > maxValue)maxValue = arr[i][j];
+		}
+	}
+	return maxValue;
+}
+double MaxValue(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	double maxValue = arr[0][0];
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			if (arr[i][j] > maxValue)maxValue = arr[i][j];
+		}
+	}
+	return maxValue;
+}
+
+
+void ShiftLeft(int arr[], const int n, const int Shifts)
+{
+	for (int i = 0; i < Shifts; i++)
+	{
+		int buffer = arr[0];
+		for (int i = 1; i < n; i++)
+		{
+			arr[i - 1] = arr[i];
+		}
+		arr[n - 1] = buffer;
+	}
+}
+void ShiftLeft(double arr[], const int n, int Shifts)
+{
+	for (int i = 0; i < Shifts; i++)
+	{
+		double buffer = arr[0];
+		for (int i = 1; i < n; i++)
+		{
+			arr[i - 1] = arr[i];
+		}
+		arr[n - 1] = buffer;
+	}
+}
+void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int Shifts)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		int bufer[10];
+
+		for (int j = 0; j < COLS; j++)
+		{
+			bufer[j] = arr[i][(j + Shifts) % COLS];
+		}
+
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = bufer[j];
+		}
+	}
+}
+void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		double bufer[10];
+
+		for (int j = 0; j < COLS; j++)
+		{
+			bufer[j] = arr[i][(j + Shifts) % COLS];
+		}
+
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = bufer[j];
+		}
+	}
+
+}
+
+
+void Shiftright(int arr[], const int n, const int Shifts)
+{
+	for (int i = 0; i < Shifts; i++)
+	{
+		int buffer = arr[0];
+		for (int i = 1; i < n; i++)
+		{
+			int buffer = arr[0];
+			for (int i = 1; i < n; i++)
+			{
+				arr[i - 1] = arr[i];
+			}
+			arr[n - 1] = buffer;
+		}
+	}
+}
+void Shiftright(double arr[], const int n, const int Shifts)
+{
+	for (int i = 0; i < Shifts; i++)
+	{
+		double buffer = arr[0];
+		for (int i = 1; i < n; i++)
+		{
+			double buffer = arr[0];
+			for (int i = 1; i < n; i++)
+			{
+				arr[i - 1] = arr[i];
+			}
+			arr[n - 1] = buffer;
+		}
+	}
+}
+void Shiftright(int arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		int bufer[10];
+
+		for (int j = 0; j < COLS; j++)
+		{
+			bufer[(j + Shifts) % COLS] = arr[i][j];
+		}
+
+		for (int j = 0; j < COLS;j++)
+		{
+			arr[i][j] = bufer[j];
+		}
+	}
+
+}
+void Shiftright(double arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		double bufer[10];
+
+		for (int j = 0; j < COLS; j++)
+		{
+			bufer[(j + Shifts) % COLS] = arr[i][j];
+		}
+
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = bufer[j];
+		}
+	}
 }
