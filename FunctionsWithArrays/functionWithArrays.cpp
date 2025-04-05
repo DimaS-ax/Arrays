@@ -7,7 +7,7 @@ const int COLS = 5;
 
 void FillRand(double arr[], const int n);
 void FillRand(int arr[], const int n);
-void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS);
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand = 0, int maxRand = 100);
 void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 void Print(double arr[], const int n);
@@ -77,7 +77,7 @@ void main()
 
 	//Объявление двумерного массива
 	cout << delimiter << endl;
-	double i_arr_2[ROWS][COLS];
+	int i_arr_2[ROWS][COLS];
 
 	FillRand(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
@@ -134,13 +134,13 @@ void FillRand(double arr[], const int n)
 		arr[i] /= 100;
 	}
 }
-void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS)
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand, int maxRand)
 {
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
-			arr[i][j] = rand() % 100;
+			arr[i][j] = rand() % (maxRand - minRand) + minRand;
 		}
 	}
 }
@@ -221,6 +221,8 @@ void Sort(double arr[], const int n)
 	{
 		for (int j = i + 1; j < n; j++)
 		{
+			//Выбранный элемент
+			//Перебираемый эелемент
 			if (arr[j] < arr[i])
 			{
 				double buffer = arr[i];
@@ -232,24 +234,30 @@ void Sort(double arr[], const int n)
 }
 void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
+	int iterations = 0;
+	int exchange = 0;
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 		{
 			for (int k = i; k < ROWS; k++)
 			{
-				for (int l = j; l < COLS; l++)
+				for (int l = k == i ? j + 1 : 0; l < COLS; l++)
 				{
-					if (arr[i][j] < arr[k][l])
+					iterations++;
+					if (arr[k][l] < arr[i][j])
 					{
 						int buffer = arr[i][j];
 						arr[i][j] = arr[k][l];
 						arr[k][l] = buffer;
+						exchange++;
 					}
 				}
 			}
 		}
 	}
+	cout << "Количество итераций:" << iterations << endl;
+	cout << "Количество обменов: " << exchange << endl;
 }
 void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS)
 {
@@ -259,9 +267,9 @@ void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS)
 		{
 			for (int k = i; k < ROWS; k++)
 			{
-				for (int l = j; l < COLS; l++)
+				for (int l = k == i ? j + 1 : 0; l < COLS; l++)
 				{
-					if (arr[i][j] < arr[k][l])
+					if (arr[i][j] > arr[k][l])
 					{
 						double buffer = arr[i][j];
 						arr[i][j] = arr[k][l];
@@ -458,23 +466,23 @@ void ShiftLeft(double arr[], const int n, int Shifts)
 		arr[n - 1] = buffer;
 	}
 }
-void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int Shifts)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		int bufer[10];
-
-		for (int j = 0; j < COLS; j++)
-		{
-			bufer[j] = arr[i][(j + Shifts) % COLS];
-		}
-
-		for (int j = 0; j < COLS; j++)
-		{
-			arr[i][j] = bufer[j];
-		}
-	}
-}
+//void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int Shifts)
+//{
+//	for (int i = 0; i < ROWS; i++)
+//	{
+//		int bufer[10];
+//
+//		for (int j = 0; j < COLS; j++)
+//		{
+//			bufer[j] = arr[i][(j + Shifts) % COLS];
+//		}
+//
+//		for (int j = 0; j < COLS; j++)
+//		{
+//			arr[i][j] = bufer[j];
+//		}
+//	}
+//}
 void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts)
 {
 	for (int i = 0; i < ROWS; i++)
@@ -493,10 +501,27 @@ void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, const int
 	}
 
 }
+void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts)
+{
+	/*for (int i = 0; i < ROWS; i++)
+	{
+		ShiftLeft(arr[i], COLS, Shifts);
+	}*/
+
+	ShiftLeft(arr[0], ROWS * COLS, Shifts);
+}
+
 
 
 void Shiftright(int arr[], const int n, const int Shifts)
 {
+
+	/* void ShiftRight(int arr[], const int n, const int shifts)
+	{
+
+		shiftLeft(arr, n, n - shifts);
+	}*/
+
 	for (int i = 0; i < Shifts; i++)
 	{
 		int buffer = arr[0];
