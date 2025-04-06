@@ -12,7 +12,7 @@ void main()
 	setlocale(LC_ALL, "ru");
 
 	const int n = 5;
-	int arr[n];
+	double arr[n];
 
 	FillRand(arr, n);
 	Print(arr, n);
@@ -34,7 +34,7 @@ void main()
 
 	//Объявление двумерного массива
 	cout << delimiter << endl;
-	int i_arr_2[ROWS][COLS];
+	double i_arr_2[ROWS][COLS];
 
 	FillRand(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
