@@ -130,12 +130,18 @@
     <ClCompile Include="fillRand.cpp" />
     <ClCompile Include="functionWithArrays.cpp" />
     <ClCompile Include="Print.cpp" />
+    <ClCompile Include="shift.cpp" />
+    <ClCompile Include="static.cpp" />
+    <ClCompile Include="value.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h" />
     <ClInclude Include="fillRand.h" />
     <ClInclude Include="Print.h" />
+    <ClInclude Include="shift.h" />
+    <ClInclude Include="static.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="value.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
