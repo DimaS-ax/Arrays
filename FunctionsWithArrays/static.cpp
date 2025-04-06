@@ -1,4 +1,4 @@
-#include"static.h"
+ï»¿#include"static.h"
 
 
 void Sort(int arr[], const int n)
@@ -22,8 +22,8 @@ void Sort(double arr[], const int n)
 	{
 		for (int j = i + 1; j < n; j++)
 		{
-			//Âûáðàííûé ýëåìåíò
-			//Ïåðåáèðàåìûé ýåëåìåíò
+			//Ð’Ñ‹Ð±Ñ€Ð°Ð½Ð½Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚
+			//ÐŸÐµÑ€ÐµÐ±Ð¸Ñ€Ð°ÐµÐ¼Ñ‹Ð¹ ÑÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚
 			if (arr[j] < arr[i])
 			{
 				double buffer = arr[i];
@@ -57,8 +57,8 @@ void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 			}
 		}
 	}
-	cout << "Êîëè÷åñòâî èòåðàöèé:" << iterations << endl;
-	cout << "Êîëè÷åñòâî îáìåíîâ: " << exchange << endl;
+	cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¸Ñ‚ÐµÑ€Ð°Ñ†Ð¸Ð¹:" << iterations << endl;
+	cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¾Ð±Ð¼ÐµÐ½Ð¾Ð²: " << exchange << endl;
 }
 void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS)
 {
