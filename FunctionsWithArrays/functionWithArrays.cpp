@@ -36,9 +36,9 @@ int Sum(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
 
 template<typename T>
-double AVG(T arr[], const int n);
+T AVG(T arr[], const int n);
 template<typename T>
-double AVG(T arr[ROWS][COLS], const int ROWS, const int COLS);
+T AVG(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
 
 
@@ -272,14 +272,14 @@ int Sum(T arr[ROWS][COLS], const int ROWS, const int COLS)
 
 
 template<typename T>
-double AVG(T arr[], const int n)
+T AVG(T arr[], const int n)
 {
 
 	return (double)Sum(arr, n) / n;
 
 }
 template<typename T>
-double AVG(T arr[ROWS][COLS], const int ROWS, const int COLS)
+T AVG(T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	return (double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
 }
