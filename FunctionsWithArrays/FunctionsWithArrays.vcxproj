@@ -127,7 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FillRand.cpp" />
     <ClCompile Include="functionWithArrays.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="FillRand.h" />
+    <ClInclude Include="MinMaxValue.h" />
+    <ClInclude Include="Print.h" />
+    <ClInclude Include="Shift.h" />
+    <ClInclude Include="Statistic.h" />
+    <ClInclude Include="STDAFX.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
