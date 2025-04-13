@@ -13,8 +13,6 @@ void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand =
 void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 
-
-
 template<typename T>
 void Print(T arr[], const int n);
 template<typename T>
@@ -27,12 +25,10 @@ template<typename T>
 void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
 
-
 template<typename T>
 int Sum(T arr[], const int n);
 template<typename T>
 int Sum(T arr[ROWS][COLS], const int ROWS, const int COLS);
-
 
 
 template<typename T>
@@ -41,12 +37,10 @@ template<typename T>
 T AVG(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
 
-
 template<typename T>
 T MinValue(T arr[], const int n);
 template<typename T>
 T MinValue(T arr[ROWS][COLS], const int ROWS, const int COLS);
-
 
 
 template<typename T>
@@ -55,16 +49,17 @@ template<typename T>
 T MaxValue(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
 
+template<typename T>
+void ShiftLeft(T arr[], const int n, int Shifts);
+template<typename T>
+void ShiftLeft(T arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts);
 
-void ShiftLeft(int arr[], const int n, int Shifts);
-void ShiftLeft(double arr[], const int n, const int Shifts);
-void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts);
-void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts);
 
-void Shiftright(int arr[], const int n, const int Shifts);
-void Shiftright(double arr[], const int n, const int Shifts);
-void Shiftright(int arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts);
-void Shiftright(double arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts);
+template<typename T>
+void Shiftright(T arr[], const int n, const int Shifts);
+template<typename T>
+void Shiftright(T arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts);
+
 
 void main()
 {
@@ -134,7 +129,7 @@ void main()
 	Shiftright(brr, SIZE, Shifts);
 	Print(brr, SIZE);
 }
-//_____________________________________________________
+
 void FillRand(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
@@ -197,7 +192,6 @@ void Print(T arr[ROWS][COLS], const int ROWS, const int COLS)
 }
 
 
-
 template<typename T>
 void Sort(T arr[], const int n)
 {
@@ -244,7 +238,6 @@ void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS)
 }
 
 
-
 template<typename T>
 int Sum(T arr[], const int n)
 {
@@ -285,7 +278,6 @@ T AVG(T arr[ROWS][COLS], const int ROWS, const int COLS)
 }
 
 
-
 template<typename T>
 T MinValue(T arr[], const int n)
 {
@@ -310,7 +302,6 @@ T MinValue(T arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 	return minValue;
 }
-
 
 
 template<typename T>
@@ -339,13 +330,12 @@ T MaxValue(T arr[ROWS][COLS], const int ROWS, const int COLS)
 }
 
 
-
-
-void ShiftLeft(int arr[], const int n, const int Shifts)
+template<typename T>
+void ShiftLeft(T arr[], const int n, const int Shifts)
 {
 	for (int i = 0; i < Shifts; i++)
 	{
-		int buffer = arr[0];
+		T buffer = arr[0];
 		for (int i = 1; i < n; i++)
 		{
 			arr[i - 1] = arr[i];
@@ -353,37 +343,8 @@ void ShiftLeft(int arr[], const int n, const int Shifts)
 		arr[n - 1] = buffer;
 	}
 }
-void ShiftLeft(double arr[], const int n, int Shifts)
-{
-	for (int i = 0; i < Shifts; i++)
-	{
-		double buffer = arr[0];
-		for (int i = 1; i < n; i++)
-		{
-			arr[i - 1] = arr[i];
-		}
-		arr[n - 1] = buffer;
-	}
-}
-void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		double bufer[10];
-
-		for (int j = 0; j < COLS; j++)
-		{
-			bufer[j] = arr[i][(j + Shifts) % COLS];
-		}
-
-		for (int j = 0; j < COLS; j++)
-		{
-			arr[i][j] = bufer[j];
-		}
-	}
-
-}
-void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts)
+template<typename T>
+void ShiftLeft(T arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts)
 {
 	/*for (int i = 0; i < ROWS; i++)
 	{
@@ -394,8 +355,8 @@ void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, const int Sh
 }
 
 
-
-void Shiftright(int arr[], const int n, const int Shifts)
+template<typename T>
+void Shiftright(T arr[], const int n, const int Shifts)
 {
 
 	/* void ShiftRight(int arr[], const int n, const int shifts)
@@ -409,7 +370,7 @@ void Shiftright(int arr[], const int n, const int Shifts)
 		int buffer = arr[0];
 		for (int i = 1; i < n; i++)
 		{
-			int buffer = arr[0];
+			T buffer = arr[0];
 			for (int i = 1; i < n; i++)
 			{
 				arr[i - 1] = arr[i];
@@ -418,27 +379,12 @@ void Shiftright(int arr[], const int n, const int Shifts)
 		}
 	}
 }
-void Shiftright(double arr[], const int n, const int Shifts)
-{
-	for (int i = 0; i < Shifts; i++)
-	{
-		double buffer = arr[0];
-		for (int i = 1; i < n; i++)
-		{
-			double buffer = arr[0];
-			for (int i = 1; i < n; i++)
-			{
-				arr[i - 1] = arr[i];
-			}
-			arr[n - 1] = buffer;
-		}
-	}
-}
-void Shiftright(int arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts)
+template<typename T>
+void Shiftright(T arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts)
 {
 	for (int i = 0; i < ROWS; i++)
 	{
-		int bufer[10];
+		T bufer[10];
 
 		for (int j = 0; j < COLS; j++)
 		{
@@ -451,21 +397,4 @@ void Shiftright(int arr[ROWS][COLS], const int ROWS, const int COLS, const int S
 		}
 	}
 
-}
-void Shiftright(double arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		double bufer[10];
-
-		for (int j = 0; j < COLS; j++)
-		{
-			bufer[(j + Shifts) % COLS] = arr[i][j];
-		}
-
-		for (int j = 0; j < COLS; j++)
-		{
-			arr[i][j] = bufer[j];
-		}
-	}
 }
