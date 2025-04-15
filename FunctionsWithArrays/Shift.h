@@ -1,6 +1,7 @@
 #pragma once
 #include"STDAFX.h"
 #include"Constants.h"
+
 template<typename T>
 void ShiftLeft(T arr[], const int n, int Shifts);
 template<typename T>
@@ -11,7 +12,6 @@ template<typename T>
 void Shiftright(T arr[], const int n, const int Shifts);
 template<typename T>
 void Shiftright(T arr[ROWS][COLS], const int ROWS, const int COLS, const int Shifts);
-
 
 
 template<typename T>

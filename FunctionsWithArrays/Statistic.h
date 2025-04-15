@@ -1,6 +1,8 @@
 #pragma once
 #include"STDAFX.h"
 #include"Constants.h"
+
+
 template<typename T>
 void Sort(T arr[], const int n);
 template<typename T>
@@ -12,12 +14,10 @@ T Sum(T arr[], const int n);
 template<typename T>
 T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-
 template<typename T>
 T AVG(T arr[], const int n);
 template<typename T>
 T AVG(T arr[ROWS][COLS], const int ROWS, const int COLS);
-
 
 
 template<typename T>
@@ -65,7 +65,6 @@ void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS)
 	cout << "Количество обменов: " << exchange << endl;
 }
 
-
 template<typename T>
 T Sum(T arr[], const int n)
 {
@@ -90,7 +89,6 @@ T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 	return sum;
 }
-
 
 template<typename T>
 T AVG(T arr[], const int n)

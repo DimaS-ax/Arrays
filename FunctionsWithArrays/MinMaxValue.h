@@ -1,18 +1,17 @@
 #pragma once
 #include"STDAFX.h"
 #include"Constants.h"
+
+
 template<typename T>
 T MinValue(T arr[], const int n);
 template<typename T>
 T MinValue(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-
 template<typename T>
 T MaxValue(T arr[], const int n);
 template<typename T>
 T MaxValue(T arr[ROWS][COLS], const int ROWS, const int COLS);
-
-
 
 
 template<typename T>
@@ -39,7 +38,6 @@ T MinValue(T arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 	return minValue;
 }
-
 
 template<typename T>
 T MaxValue(T arr[], const int n)
